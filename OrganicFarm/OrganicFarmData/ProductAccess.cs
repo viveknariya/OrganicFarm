@@ -13,20 +13,20 @@ namespace OrganicFarm.OrganicFarmData
         {
             _shopContext = shopcontext;
         }
-        public OrganicProduct AddOrganicProduct(OrganicProduct organicProduct)
+        public Product AddOrganicProduct(Product organicProduct)
         {
             _shopContext.OrganicProduct.Add(organicProduct);
             _shopContext.SaveChanges();
             return organicProduct;
         }
 
-        public void DeleteOrganicProduct(OrganicProduct organicProduct)
+        public void DeleteOrganicProduct(Product organicProduct)
         {
             _shopContext.OrganicProduct.Remove(organicProduct);
             _shopContext.SaveChanges();
         }
 
-        public OrganicProduct EditOrganicProduct(OrganicProduct organicProduct)
+        public Product EditOrganicProduct(Product organicProduct)
         {
             var p = getOrganicProduct(organicProduct.ProductId);
             p.ProductName = organicProduct.ProductName;
@@ -41,10 +41,10 @@ namespace OrganicFarm.OrganicFarmData
             return p;
         }
 
-        public List<OrganicProduct> EditProductPriceByShop(int shopid, int increment = 10)
+        public List<Product> EditProductPriceByShop(int shopid, int increment = 10)
         {
             var lst = _shopContext.OrganicProduct.Where(p => p.OrganicShopId == shopid).ToList();
-            foreach (OrganicProduct op in lst)
+            foreach (Product op in lst)
             {
                 op.Price = op.Price + op.Price * increment / 100;
                 _shopContext.OrganicProduct.Update(op);
@@ -54,22 +54,22 @@ namespace OrganicFarm.OrganicFarmData
             return lst;
         }
 
-        public List<OrganicProduct> getOrganicProduct()
+        public List<Product> getOrganicProduct()
         {
             return _shopContext.OrganicProduct.ToList();
         }
 
-        public OrganicProduct getOrganicProduct(int id)
+        public Product getOrganicProduct(int id)
         {
             return _shopContext.OrganicProduct.FirstOrDefault(p => p.ProductId == id);
         }
 
-        public List<OrganicProduct> getOrganicProductByType(string type)
+        public List<Product> getOrganicProductByType(string type)
         {
             return _shopContext.OrganicProduct.Where(p => p.ProductType == type).ToList();
         }
 
-        public OrganicProduct getOrganicProductWithShop()
+        public Product getOrganicProductWithShop()
         {
             throw new NotImplementedException();
         }

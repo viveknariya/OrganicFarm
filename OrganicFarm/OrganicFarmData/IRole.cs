@@ -8,14 +8,14 @@ namespace OrganicFarm.OrganicFarmData
 {
     public interface IRole
     {
-        List<TblRole> getTblRole();
+        List<Role> getTblRole();
 
-        TblRole getTblRole(int id);
+        Role getTblRole(int id);
 
-        TblRole AddTblRole(TblRole TblRole);
+        Role AddTblRole(Role TblRole);
 
-        void DeleteTblRole(TblRole TblRole);
+        void DeleteTblRole(Role TblRole);
 
-        TblRole EditTblRole(TblRole TblRole);
+        Role EditTblRole(Role TblRole);
     }
 }

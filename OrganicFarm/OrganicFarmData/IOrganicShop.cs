@@ -8,14 +8,14 @@ namespace OrganicFarm.OrganicFarmData
 {
     public interface IOrganicShop
     {
-        List<OrganicShop> getOrganicShop();
+        List<Shop> getOrganicShop();
 
-        OrganicShop getOrganicShop(int id);
+        Shop getOrganicShop(int id);
 
-        OrganicShop AddOrganicShop(OrganicShop OrganicShop);
+        Shop AddOrganicShop(Shop OrganicShop);
 
-        void DeleteOrganicShop(OrganicShop OrganicShop);
+        void DeleteOrganicShop(Shop OrganicShop);
 
-        OrganicShop EditOrganicShop(OrganicShop OrganicShop);
+        Shop EditOrganicShop(Shop OrganicShop);
     }
 }

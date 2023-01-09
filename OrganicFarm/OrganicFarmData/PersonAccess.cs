@@ -14,21 +14,21 @@ namespace OrganicFarm.OrganicFarmData
             _shopContext = shopcontext;
         }
 
-        public Person AddPerson(Person person)
+        public User AddPerson(User person)
         {
             _shopContext.Person.Add(person);
             _shopContext.SaveChanges();
             return person;
         }
 
-        public void DeletePerson(Person person)
+        public void DeletePerson(User person)
         {
 
             _shopContext.Person.Remove(person);
             _shopContext.SaveChanges();
         }
 
-        public Person EditPerson(Person person)
+        public User EditPerson(User person)
         {
             var per = getPerson(person.PersonId);
             per.PersonName = person.PersonName;
@@ -43,12 +43,12 @@ namespace OrganicFarm.OrganicFarmData
             return per;
         }
 
-        public List<Person> getPerson()
+        public List<User> getPerson()
         {
             return _shopContext.Person.ToList();
         }
 
-        public Person getPerson(int id)
+        public User getPerson(int id)
         {
             return _shopContext.Person.FirstOrDefault(r => r.PersonId == id);
         }

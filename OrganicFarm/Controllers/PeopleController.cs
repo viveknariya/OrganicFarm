@@ -56,7 +56,7 @@ namespace OrganicFarm.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonId,PersonName,Ppassword,EmailId,City,RoleId")] Person person)
+        public async Task<IActionResult> Create([Bind("PersonId,PersonName,Ppassword,EmailId,City,RoleId")] User person)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace OrganicFarm.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PersonId,PersonName,Ppassword,EmailId,City,RoleId")] Person person)
+        public async Task<IActionResult> Edit(int id, [Bind("PersonId,PersonName,Ppassword,EmailId,City,RoleId")] User person)
         {
             if (id != person.PersonId)
             {

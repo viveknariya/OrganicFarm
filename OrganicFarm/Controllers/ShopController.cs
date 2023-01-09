@@ -35,7 +35,7 @@ namespace OrganicFarm.Controllers
         [HttpPost]
         [Route("api/[controller]")]
 
-        public IActionResult addShop(OrganicShop shop)
+        public IActionResult addShop(Shop shop)
         {
             return Ok(_shop.AddOrganicShop(shop));
         }

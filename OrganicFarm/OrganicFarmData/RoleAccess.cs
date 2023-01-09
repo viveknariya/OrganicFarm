@@ -14,21 +14,21 @@ namespace OrganicFarm.OrganicFarmData
             _shopContext = shopcontext;
         }
 
-        public TblRole AddTblRole(TblRole TblRole)
+        public Role AddTblRole(Role TblRole)
         {
             _shopContext.TblRole.Add(TblRole);
             _shopContext.SaveChanges();
             return TblRole;
         }
 
-        public void DeleteTblRole(TblRole TblRole)
+        public void DeleteTblRole(Role TblRole)
         {
             
             _shopContext.TblRole.Remove(TblRole);
             _shopContext.SaveChanges();
         }
 
-        public TblRole EditTblRole(TblRole TblRole)
+        public Role EditTblRole(Role TblRole)
         {
             var role = getTblRole(TblRole.RoleId);
             role.RoleName = TblRole.RoleName;
@@ -39,12 +39,12 @@ namespace OrganicFarm.OrganicFarmData
             return role;
         }
 
-        public List<TblRole> getTblRole()
+        public List<Role> getTblRole()
         {
             return _shopContext.TblRole.ToList();
         }
 
-        public TblRole getTblRole(int id)
+        public Role getTblRole(int id)
         {
             return _shopContext.TblRole.FirstOrDefault(r => r.RoleId == id);
         }

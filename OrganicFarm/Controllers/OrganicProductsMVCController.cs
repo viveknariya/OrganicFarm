@@ -56,7 +56,7 @@ namespace OrganicFarm.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,ProductName,Price,ProductType,ExpiryDate,OrganicShopId")] OrganicProduct organicProduct)
+        public async Task<IActionResult> Create([Bind("ProductId,ProductName,Price,ProductType,ExpiryDate,OrganicShopId")] Product organicProduct)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace OrganicFarm.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductId,ProductName,Price,ProductType,ExpiryDate,OrganicShopId")] OrganicProduct organicProduct)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductId,ProductName,Price,ProductType,ExpiryDate,OrganicShopId")] Product organicProduct)
         {
             if (id != organicProduct.ProductId)
             {

@@ -8,20 +8,20 @@ namespace OrganicFarm.OrganicFarmData
 {
      public interface IOrganicProduct
     {
-        List<OrganicProduct> getOrganicProduct();
+        List<Product> getOrganicProduct();
 
-        List<OrganicProduct> getOrganicProductByType(string type);
+        List<Product> getOrganicProductByType(string type);
 
-        List<OrganicProduct> EditProductPriceByShop(int shopid, int increment);
+        List<Product> EditProductPriceByShop(int shopid, int increment);
 
-        OrganicProduct getOrganicProductWithShop();
+        Product getOrganicProductWithShop();
 
-        OrganicProduct AddOrganicProduct(OrganicProduct OrganicProduct);
+        Product AddOrganicProduct(Product OrganicProduct);
 
-        void DeleteOrganicProduct(OrganicProduct OrganicProduct);
+        void DeleteOrganicProduct(Product OrganicProduct);
 
-        OrganicProduct EditOrganicProduct(OrganicProduct OrganicProduct);
+        Product EditOrganicProduct(Product OrganicProduct);
 
-        OrganicProduct getOrganicProduct(int id);
+        Product getOrganicProduct(int id);
     }
 }

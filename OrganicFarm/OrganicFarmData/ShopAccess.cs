@@ -14,21 +14,21 @@ namespace OrganicFarm.OrganicFarmData
             _shopContext = shopcontext;
         }
 
-        public OrganicShop AddOrganicShop(OrganicShop organicShop)
+        public Shop AddOrganicShop(Shop organicShop)
         {
             _shopContext.OrganicShop.Add(organicShop);
             _shopContext.SaveChanges();
             return organicShop;
         }
 
-        public void DeleteOrganicShop(OrganicShop organicShop)
+        public void DeleteOrganicShop(Shop organicShop)
         {
 
             _shopContext.OrganicShop.Remove(organicShop);
             _shopContext.SaveChanges();
         }
 
-        public OrganicShop EditOrganicShop(OrganicShop organicShop)
+        public Shop EditOrganicShop(Shop organicShop)
         {
             var o = getOrganicShop(organicShop.ShopId);
             o.ShopName = organicShop.ShopName;
@@ -42,12 +42,12 @@ namespace OrganicFarm.OrganicFarmData
             return o;
         }
 
-        public List<OrganicShop> getOrganicShop()
+        public List<Shop> getOrganicShop()
         {
             return _shopContext.OrganicShop.ToList();
         }
 
-        public OrganicShop getOrganicShop(int id)
+        public Shop getOrganicShop(int id)
         {
             return _shopContext.OrganicShop.FirstOrDefault(o => o.ShopId == id);
         }

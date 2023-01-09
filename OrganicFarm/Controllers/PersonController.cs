@@ -37,7 +37,7 @@ namespace OrganicFarm.Controllers
         [HttpPost]
         [Route("api/[controller]")]
 
-        public IActionResult addPerson(Person person)
+        public IActionResult addPerson(User person)
         {
             return Ok(_person.AddPerson(person));
         }

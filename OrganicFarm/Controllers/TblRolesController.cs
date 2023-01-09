@@ -53,7 +53,7 @@ namespace OrganicFarm.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RoleId,RoleName")] TblRole tblRole)
+        public async Task<IActionResult> Create([Bind("RoleId,RoleName")] Role tblRole)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace OrganicFarm.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("RoleId,RoleName")] TblRole tblRole)
+        public async Task<IActionResult> Edit(int id, [Bind("RoleId,RoleName")] Role tblRole)
         {
             if (id != tblRole.RoleId)
             {

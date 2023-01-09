@@ -8,14 +8,14 @@ namespace OrganicFarm.OrganicFarmData
 {
     public interface IPerson
     {
-        List<Person> getPerson();
+        List<User> getPerson();
 
-        Person getPerson(int id);
+        User getPerson(int id);
 
-        Person AddPerson(Person Person);
+        User AddPerson(User Person);
 
-        void DeletePerson(Person Person);
+        void DeletePerson(User Person);
 
-        Person EditPerson(Person Person);
+        User EditPerson(User Person);
     }
 }

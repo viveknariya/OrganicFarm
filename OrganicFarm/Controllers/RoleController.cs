@@ -38,7 +38,7 @@ namespace OrganicFarm.Controllers
         [HttpPost]
         [Route("api/[controller]")]
 
-        public IActionResult addRole(TblRole role)
+        public IActionResult addRole(Role role)
         {
             return Ok(_Role.AddTblRole(role));
         }
